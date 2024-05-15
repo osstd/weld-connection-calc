@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="weld.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Weld Connection</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="main-heading">
+        <h1 id="popup">Weld connection <img src="weld.png" /></h1>
+      </div>
+      <div class="grid-container">
+        <div class="weld-container grid-item">
+          <h2 id="heading-margin">Weld</h2>
+
+          <label for="weld-type">Weld type:</label>
+
+          <select id="weld-type">
+            <option value="Joint penetration groove">
+              Joint penetration groove
+            </option>
+            <option value="Fillet">Fillet</option>
+            <option value="Flare bevel groove">Flare bevel groove</option>
+          </select>
+
+          <div id="weld-material-input">
+            <div>
+              <label for="electrode-strength"
+                >Electrode ultimate tensile strength</label
+              >
+              <span
+                >X<sub>u</sub>:<input
+                  type="number"
+                  id="electrode-strength"
+                  value="490"
+                />
+                MPa</span
+              >
+            </div>
+            <div>
+              <label for="weld-size"
+                >Size (is W<sub>f</sub> for flare bevel weld)</label
+              >
+              <span>D:<input type="number" id="weld-size" value="6" /> mm</span>
+            </div>
+            <div>
+              <label for="weld-length">Length</label>
+              <span
+                >X<sub>u</sub>:<input
+                  type="number"
+                  id="weld-length"
+                  value="51"
+                />
+                mm</span
+              >
+            </div>
+            <div>
+              <label for="weld-angle">Angle of axis of weld:</label>
+              <span
+                ><input type="number" id="weld-angle" value="0" /> &deg;</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="properties-container grid-item">
+          <div class="heading">
+            <h2>Weld Properties</h2>
+          </div>
+          <div class="weld-properties">
+            <div>Weld type: <span id="p-weld-type"></span></div>
+            <div>
+              X<sub>u</sub>: <span id="p-electrode-strength"></span> MPa
+            </div>
+            <div>D: <span id="p-weld-size"></span> mm</div>
+            <div>L: <span id="p-weld-length"></span> mm</div>
+            <div>
+              Angle of axis of weld: <span id="p-weld-angle"></span> &deg;
+            </div>
+          </div>
+          <div class="base-metal-properties">
+            <div>Thickness, t: <span id="p-thickness"></span> mm</div>
+            <div>
+              Specified minimum tensile strength, F<sub>u</sub>:
+              <span id="p-spec-minimum-strength"></span>MPa
+            </div>
+            <div>
+              Specified minimum yield strength, F<sub>y</sub>:
+              <span id="p-spec-minimum-yield"></span>MPa
+            </div>
+          </div>
+        </div>
+
+        <div class="base-metal-container grid-item">
+          <h2>Base Metal</h2>
+
+          <div id="base-metal-material-input">
+            <div>
+              <label for="thickness">Thickness</label>
+              <span
+                >t: <input type="number" id="thickness" value="10" />mm</span
+              >
+            </div>
+            <div>
+              <label for="spec-minimum-strength"
+                >Specified minimum tensile strength</label
+              >
+              <span
+                >F<sub>u</sub>:
+                <input type="number" id="spec-minimum-strength" value="450" />
+                MPa</span
+              >
+            </div>
+            <div>
+              <label for="spec-minimum-yield"
+                >Specified minimum yield strength</label
+              >
+              <span
+                >F<sub>y</sub>:
+                <input type="number" id="spec-minimum-yield" value="300" />
+                MPa</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="results grid-item">
+          <div class="heading">
+            <h2>Results</h2>
+          </div>
+
+          <div id="res-joint-penetration-groove">
+            <div id="phi-weld">Φ<sub>w</sub> = 0.67</div>
+            <div id="area-metal"></div>
+            <div id="area-weld"></div>
+            <div id="shear-resistance-base"></div>
+            <div id="shear-resistance-weld"></div>
+            <div id="shear-capacity"></div>
+          </div>
+
+          <div id="res-fillet">
+            <div id="phi-weld">Φ<sub>w</sub> = 0.67</div>
+            <div id="fillet-area-metal"></div>
+            <div id="fillet-area-weld"></div>
+            <div id="M-w">M<sub>w</sub> = 1</div>
+            <div id="fillet-shear-resistance-base"></div>
+            <div id="fillet-shear-resistance-weld"></div>
+            <div id="fillet-shear-capacity"></div>
+          </div>
+
+          <div id="res-flare-bevel-groove">
+            <div id="phi-weld">Φ<sub>w</sub> = 0.67</div>
+            <div id="flare-area-weld"></div>
+            <div id="flare-res-tensile-strength"></div>
+            <div id="flare-shear-capacity"></div>
+          </div>
+        </div>
+      </div>
+      <div id="popupContainer" class="popup-container">
+        <div class="popup-content popup-grid">
+          <div class="popup-grid-item">
+            <img id="qrCodeImage" src="qrtest.png" alt="QR Code" />
+          </div>
+          <div class="popup-grid-item no-border">
+            <button id="copyLinkBtn">Copy Link</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
