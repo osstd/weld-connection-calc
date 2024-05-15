@@ -271,7 +271,7 @@ function managePopUp() {
   });
 
   copyBtn.addEventListener("click", function () {
-    const linkToCopy = "https://www.oshemy.info";
+    const linkToCopy = "https://weld-connection-calc.vercel.app";
     navigator.clipboard
       .writeText(linkToCopy)
       .then(function () {
